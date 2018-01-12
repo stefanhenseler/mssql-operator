@@ -1,0 +1,1 @@
+# Makefile for the Docker image synax/mssql-operator
