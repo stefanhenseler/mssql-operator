@@ -13,4 +13,5 @@ docker-build:
 	docker build -t $(REPOSITORY)/$(CONTAINER_NAME):$(VERSION) .
 
 docker-publish: 
+	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
 	docker push $(REPOSITORY)/$(CONTAINER_NAME):$(VERSION)

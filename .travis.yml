@@ -9,4 +9,9 @@ services:
   - docker
 
 script:
-  - make all
+  - make build
+  - make docker-build
+
+
+after_success:
+  - make docker-publish
