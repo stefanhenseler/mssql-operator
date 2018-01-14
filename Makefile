@@ -10,7 +10,7 @@ all: build docker-build docker-publish
 build:
 	[ -d $(BUILD_TEMP_DIR) ] || mkdir -p $(BUILD_TEMP_DIR)
 
-	GOOS=linux CGO_ENABLED=0 go build -gcflags "-N -l" -o $(BUILD_TEMP_DIRkubectl)/$(CONTAINER_NAME)
+	GOOS=linux CGO_ENABLED=0 go build -gcflags "-N -l" -o $(BUILD_TEMP_DIR)/$(CONTAINER_NAME)
 
 docker-build: 
 	docker build -t $(REPOSITORY)/$(CONTAINER_NAME):$(VERSION) .
