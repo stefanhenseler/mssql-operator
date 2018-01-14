@@ -18,4 +18,4 @@ docker-build:
 
 docker-publish: 
 	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
-	docker push $(REPOSITORY)/$(CONTAINER_NAME):$(VERSION)
+	docker push $(REPOSITORY)/$(CONTAINER_NAME):latest
