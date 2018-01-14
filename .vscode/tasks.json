@@ -1,14 +1,33 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "0.1.0",
-    "command": "${workspaceRoot}/.debug/task.sh",
-    "isShellCommand": true,
-    "showOutput": "always",
+    "version": "2.0.0",
     "tasks": [
-        { 
-            "taskName": "deployWithTelepresence",
-            "suppressTaskName": true
+        {
+            "taskName": "build",
+            "type": "shell",
+            "command": "make build",
+            "problemMatcher": "$go",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "taskName": "docker-build",
+            "type": "shell",
+            "command": "make docker-build",
+            "problemMatcher": []
+        },
+        {
+            "taskName": "docker-push",
+            "type": "shell",
+            "command": "make docker-push",
+            "problemMatcher": []
+        },
+        {
+            "taskName": "all",
+            "type": "shell",
+            "command": "make",
+            "problemMatcher": []
         }
     ]
 }
