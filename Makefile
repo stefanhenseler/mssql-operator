@@ -1,8 +1,8 @@
 # Makefile for the Docker image synax/mssql-operator
 
 REPOSITORY='synax'
-CONTAINER_NAME='microservice'
-VERSION='0.1'
+CONTAINER_NAME='mssql-operator'
+VERSION='0.1.$(TRAVIS_BUILD_NUMBER)'
 
 all: build docker-build docker-publish
 
